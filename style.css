@@ -1,0 +1,102 @@
+html {
+    scrollbar-color: #a89281 transparent;
+    font-family: 'Merriweather', Georgia, 'Times New Roman', Times, serif;
+}
+
+body {
+    background: #eaddce;
+    text-align: left;
+}
+
+h1, h2, h3, h4, h5, h6 {
+    color: #333333;
+    margin-bottom: 0.3rem;
+    margin-top: 0.7rem;
+}
+
+h1 {
+    font-size: 4rem;
+    letter-spacing: -0.01rem;
+    margin-top: 0.5rem;
+}
+
+h4 {
+    margin-bottom: 0.5rem;
+}
+
+li, p {
+    line-height: 1.7;
+    font-weight: 300;
+}
+
+ul {
+  list-style: none;
+  padding: 0;
+  margin: 0;
+}
+
+li {
+  display: flex;
+  align-items: baseline;
+  margin-bottom: 0.5em;
+}
+
+li span {
+  flex: 1;
+  display: block;
+}
+
+li::before {
+  content: ">";
+  color: #8b4513;
+  font-weight: bold;
+  margin-right: 10px;
+  flex-shrink: 0;
+}
+
+hr {
+    border: none;
+    border-top: 2px solid #473e39;
+}
+
+hr.newspaper-bottom {
+    border: none;
+    border-top: 2px solid #473e39;
+    border-bottom: 4px solid #473e39;
+    height: 4px;
+}
+
+hr.newspaper-top {
+    border: none;
+    border-top: 4px solid #473e39;
+    border-bottom: 2px solid #473e39;
+    height: 4px;
+}
+
+a {
+    color: #5c220c;
+    text-decoration: underline solid 0.08em;
+    text-underline-offset: 0.2em;
+}
+
+a:hover {
+    text-decoration: underline wavy 0.08em;
+}
+
+::selection {
+  background: #8b4513;
+  color: #fff;
+}
+
+.main-content {
+    max-width: 550px;
+    margin: 8rem auto;
+}
+
+.section-header {
+    font-size: 1rem;
+    font-family: Verdana, Geneva, Tahoma, sans-serif;
+    font-weight: bold;
+    letter-spacing: -0.03rem;
+    margin: 2rem 0 1rem;
+}
