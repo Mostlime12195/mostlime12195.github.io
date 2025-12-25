@@ -1,9 +1,0 @@
-{
-  "devDependencies": {
-    "critical": "^7.0.0",
-    "purgecss": "^6.0.0"
-  },
-  "scripts": {
-    "optimize": "node optimize-css.js"
-  }
-}
