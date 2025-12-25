@@ -6,6 +6,7 @@ html {
 body {
     background: #eaddce;
     text-align: left;
+    overflow-y: scroll;
 }
 
 h1, h2, h3, h4, h5, h6 {
@@ -29,29 +30,13 @@ li, p {
     font-weight: 300;
 }
 
-ul {
-  list-style: none;
-  padding: 0;
-  margin: 0;
+li::marker {
+    color: #8b4513;
 }
 
-li {
-  display: flex;
-  align-items: baseline;
-  margin-bottom: 0.5em;
-}
-
-li span {
-  flex: 1;
-  display: block;
-}
-
-li::before {
-  content: ">";
-  color: #8b4513;
-  font-weight: bold;
-  margin-right: 10px;
-  flex-shrink: 0;
+ul li::marker {
+    content: "> ";
+    font-weight: bold;
 }
 
 hr {
@@ -83,6 +68,26 @@ a:hover {
     text-decoration: underline wavy 0.08em;
 }
 
+nav {
+    display: flex;
+    justify-content: space-between;
+    text-transform: uppercase;
+    font-size: 0.8rem;
+    letter-spacing: 1px;
+    font-weight: 700;
+}
+
+nav span {
+    display: flex;
+    gap: 1rem;
+}
+
+a.selected {
+    font-weight: bold;
+    text-decoration: none;
+    color: #333333;
+}
+
 ::selection {
   background: #8b4513;
   color: #fff;
@@ -90,7 +95,7 @@ a:hover {
 
 .main-content {
     max-width: 550px;
-    margin: 8rem auto;
+    margin: 4rem auto;
 }
 
 .section-header {
@@ -99,4 +104,131 @@ a:hover {
     font-weight: bold;
     letter-spacing: -0.03rem;
     margin: 2rem 0 1rem;
+}
+
+.posts-item-header {
+    display: flex;
+    justify-content: space-between;
+    align-items: baseline;
+    margin-bottom: 0.5rem;
+}
+
+.posts-item-header h3,
+.posts-item-header p {
+    margin: 0;
+}
+
+.posts-item-header p {
+    margin-left: 1rem;
+}
+
+.posts-item-link {
+    text-decoration: none;
+}
+
+.posts li::marker {
+    font-size: 1.5rem;
+}
+
+.post-title {
+    font-family: 'Merriweather', serif;
+    /* Was likely ~2.5rem or 3rem. Drop it down. */
+    font-size: 2rem; 
+    
+    /* Tighter line height prevents the lines from drifting apart */
+    line-height: 1.3; 
+    
+    font-weight: 900;
+    color: #222;
+    
+    /* Add breathing room from the top double-line */
+    margin-top: 1.5rem; 
+    
+    /* Pull it closer to the date/meta info */
+    margin-bottom: 0.5rem; 
+}
+
+/* Mobile Tweak: It needs to be even smaller on phones */
+@media (max-width: 600px) {
+    .post-title {
+        font-size: 1.6rem;
+    }
+}
+
+.post-meta {
+    display: flex;
+    justify-content: space-between; /* Pushes "Back" link to the far right */
+    align-items: center;
+    font-family: 'Merriweather', serif; /* Or sans-serif if you prefer contrast */
+    font-size: 0.9rem;
+    color: #666;
+    font-style: italic; /* Gives it that "Journalist" vibe */
+}
+
+.back-link {
+    font-style: normal;
+}
+
+/* A single, thinner line to distinguish from the "Masthead" double lines */
+/* 1. Constrain the Separator Line */
+.single-line {
+    border: 0;
+    border-top: 1px solid #444;
+    margin-top: 3rem;
+    margin-bottom: 2rem;
+    
+    /* ADD THIS to match your text column */
+    max-width: 550px; /* Or whatever your body text max-width is */
+    margin-left: auto;
+    margin-right: auto;
+}
+
+/* 2. Constrain the Pagination Container */
+.post-pagination {
+    display: flex;
+    justify-content: space-between;
+    gap: 20px;
+    margin-bottom: 4rem;
+    font-family: 'Merriweather', serif;
+    
+    /* ADD THIS to match your text column */
+    max-width: 550px; /* Same value as above */
+    margin-left: auto;
+    margin-right: auto;
+    
+    /* Optional: Add a tiny bit of padding so it never touches the ACTUAL edge on mobile */
+    padding: 0 10px; 
+}
+
+.prev-post, .next-post {
+    flex: 1; /* Each takes 50% width */
+    display: flex;
+    flex-direction: column;
+}
+
+.next-post {
+    text-align: right; /* Aligns the "Next" link to the right */
+    align-items: flex-end;
+}
+
+.pagination-label {
+    font-size: 0.75rem;
+    text-transform: uppercase;
+    color: #888;
+    margin-bottom: 5px;
+    font-weight: 700;
+    letter-spacing: 1px;
+}
+
+.post-pagination a {
+    font-size: 1.1rem;
+    font-weight: 700; /* Bold title */
+    color: #333;
+    text-decoration: none;
+    line-height: 1.3;
+}
+
+.post-pagination a:hover {
+    text-decoration: underline;
+    color: #8b4513;
 }

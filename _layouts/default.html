@@ -1,0 +1,67 @@
+<!DOCTYPE HTML>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+    {% feed_meta %}
+
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link
+        href="https://fonts.googleapis.com/css2?family=Merriweather:ital,opsz,wght@0,18..144,300..900;1,18..144,300..900&display=swap"
+        rel="stylesheet">
+
+    <link rel="stylesheet" href="/style.css">
+    <title>{{ page.title }}</title>
+</head>
+
+<body>
+    <div class="main-content">
+        <div class="header">
+            <nav>
+                <a href="{{ '/feed.xml' | absolute_url }}">RSS</a>
+                <span>
+                    <a href="/">Home</a>
+                    <a href="/blog" class="selected">Blog</a>
+                </span>
+            </nav>
+            <hr class="newspaper-top">
+            <h1 class="post-title">{{ page.title }}</h1>
+            <div class="post-meta">
+                <!-- Left side -->
+                <a href="/blog" class="back-link">← Back to Index</a>
+
+                <!-- Right side -->
+                 <span>
+                <span class="date">{{ page.date | date: "%B %d, %Y" }}</span>
+                <span class="meta-separator">•</span> 
+                <span class="read-time">~{{ content | number_of_words | divided_by: 180 }} min read</span>
+                </span>
+            </div>
+            <hr class="newspaper-bottom">
+        </div>
+        {{content}}
+        </div>
+        <!-- Divider separating content from nav -->
+<hr class="single-line">
+
+<nav class="post-pagination">
+  <div class="prev-post">
+    {% if page.previous %}
+      <span class="pagination-label">← Previous</span>
+      <a href="{{ page.previous.url }}">{{ page.previous.title }}</a>
+    {% endif %}
+  </div>
+
+  <div class="next-post">
+    {% if page.next %}
+      <span class="pagination-label">Next →</span>
+      <a href="{{ page.next.url }}">{{ page.next.title }}</a>
+    {% endif %}
+  </div>
+</nav>
+</body>
+
+</html>

@@ -1,0 +1,48 @@
+---
+layout: null
+---
+<!DOCTYPE HTML>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+    {% feed_meta %}
+
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link
+        href="https://fonts.googleapis.com/css2?family=Merriweather:ital,opsz,wght@0,18..144,300..900;1,18..144,300..900&display=swap"
+        rel="stylesheet">
+
+    <link rel="stylesheet" href="../style.css">
+    <title>Karo's Blog</title>
+</head>
+
+<body>
+    <div class="main-content">
+        <div class="header">
+            <nav>
+                <a href="{{ '/feed.xml' | absolute_url }}">RSS</a>
+                <span>
+                    <a href="/">Home</a>
+                    <a href="/blog" class="selected">Blog</a>
+                </span>
+            </nav>
+            <hr class="newspaper-top">
+            <h1>Blog</h1>
+            <h4><em>My thoughts and ideas</em></h4>
+            <hr class="newspaper-bottom">
+        </div>
+        <div class="posts">
+            <h3 class="section-header">POSTS</h3>
+            <ul>
+                {% for post in site.posts %}
+                <li><a href="{{ post.url }}" class="posts-item-link"><span class="posts-item-header"><h3 class="post-title">{{ post.title }}</h3> <p>{{ post.date | date: "%B %d, %Y" }}</p></span>{{ post.excerpt | strip_html | truncatewords: 30 }}</a></li>
+                {% endfor %}
+            </ul>
+        </div>
+</body>
+
+</html>

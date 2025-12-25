@@ -1,0 +1,17 @@
+# Jekyll internals
+_site/
+.sass-cache/
+.jekyll-cache/
+.jekyll-metadata
+
+# Bundler and Ruby
+.bundle/
+vendor/
+# Do NOT ignore Gemfile.lock
+
+# Operating System files
+.DS_Store
+Thumbs.db
+
+# Environment variables
+.env
