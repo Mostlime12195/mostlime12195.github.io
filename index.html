@@ -19,7 +19,13 @@ layout: null
 
     {% feed_meta %}
 
-    <link rel="stylesheet" href="style.css">
+    <style>
+    {% capture include_css %}
+        {% include style.css %}
+    {% endcapture %}
+    {{ include_css | scssify }}
+    </style>
+
     <title>Karo's Site</title>
 </head>
 
@@ -29,13 +35,13 @@ layout: null
             <nav>
                 <a href="{{ '/feed.xml' | absolute_url }}">RSS</a>
                 <span>
-                    <a href="/" class="selected">Home</a>
-                    <a href="/blog">Blog</a>
+                    <a href="/" class="selected">HOME</a>
+                    <a href="/blog">BLOG</a>
                 </span>
             </nav>
             <hr class="newspaper-top">
             <h1>Karo Roghzai</h1>
-            <h4><em>Software Engineer | Privacy Enthusiast | Generalist</em></h4>
+            <h2 class="subtitle"><em>Software Engineer | Privacy Enthusiast | Generalist</em></h2>
 
             <hr class="newspaper-bottom">
         </div>

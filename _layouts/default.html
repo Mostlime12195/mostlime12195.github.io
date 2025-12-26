@@ -16,7 +16,13 @@
 
   {% feed_meta %}
 
-  <link rel="stylesheet" href="/style.css">
+  <style>
+  {% capture include_css %}
+    {% include style.css %}
+  {% endcapture %}
+  {{ include_css | scssify }}
+</style>
+
   <title>{{ page.title }}</title>
 </head>
 
@@ -26,8 +32,8 @@
       <nav>
         <a href="{{ '/feed.xml' | absolute_url }}">RSS</a>
         <span>
-          <a href="/">Home</a>
-          <a href="/blog" class="selected">Blog</a>
+          <a href="/">HOME</a>
+          <a href="/blog" class="selected">BLOG</a>
         </span>
       </nav>
       <hr class="newspaper-top">

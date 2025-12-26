@@ -6,3 +6,6 @@ permalink: /blog/:title/
 
 plugins:
   - jekyll-feed
+
+sass:
+  style: compressed
