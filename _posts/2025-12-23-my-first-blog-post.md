@@ -23,4 +23,4 @@ I'll write based on a variety of topics here, like
 - Showcase updates on some of my projects.
 - Talk about things I'm passionate about. Remember, I'm not only a programmer! You might find me talking about subjects entirely unrelated to programming, or unrelated to computers in general.
 
-I don't have a set post schedule and will post whenever inspiration strikes, so if you want to read any of my content in the future feel free to add this website to your RSS feed [using the site's RSS](https://mostlime12195.github.io/feed.xml). You can take a look at the (100% JS-free) code for my website at [its GitHub repository](https://github.com/Mostlime12195/mostlime12195.github.io).
+I don't have a set post schedule and will post whenever inspiration strikes, so if you want to read any of my content in the future feel free to add this website to your RSS feed [using the site's RSS](https://mostlime.pages.dev/feed.xml). You can take a look at the (100% JS-free) code for my website at [its GitHub repository](https://github.com/Mostlime12195/mostlime12195.github.io).
